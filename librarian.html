@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librarian Dashboard</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-between">
+            <div >
+                <h2>Librarian Dashboard</h2>
+            </div>
+            <div >
+                <button id="logout" class="btn btn-danger">Logout</button>
+            </div>
+        </div>
+
+        <h3>Add Book</h3>
+        <form id="addBookForm">
+            <div class="form-group">
+                <label for="bookTitle">Title:</label>
+                <input type="text" class="form-control" id="bookTitle" required>
+            </div>
+            <div class="form-group">
+                <label for="bookAuthor">Author:</label>
+                <input type="text" class="form-control" id="bookAuthor" required>
+            </div>
+            <div class="form-group">
+                <label for="bookStatus">Status:</label>
+                <select class="form-control" id="bookStatus">
+                    <option value="AVAILABLE">Available</option>
+                    <option value="BORROWED">Borrowed</option>
+                </select>
+            </div>
+            <div class="form-group my-2">
+                <button type="submit" class="btn btn-primary">Add Book</button>
+            </div>
+        </form>
+
+        <h3>Manage Books</h3>
+        <div class="booksTable" style="margin-bottom: 20px; height: 200px; overflow-y: scroll;">
+
+            <table class="table table-striped" id="booksTable" >
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                    <tbody ></tbody>
+                </table>
+        </div>
+            
+            <h3>Manage Members</h3>
+            <div class="membersTable" style="margin-bottom: 20px; height: 200px; overflow-y: scroll;">
+
+            <table class="table table-striped" id="membersTable">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+        </table>
+        </div>  
+
+
+<!-- Update Book Modal -->
+<div id="updateBookModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <div class="modal-header" style="display: inline-flex; justify-content: space-between;">
+            <h5>Update Book</h5>
+            <span class="close"  id="closeBookModal">&times;</span>
+        </div>
+        <div class="modal-body">
+            <form id="updateBookForm">
+                <input type="hidden" id="updateBookId"> <!-- Hidden field to store book ID -->
+                <div class="form-group">
+                    <label for="updateBookTitle">Title:</label>
+                    <input type="text" class="form-control" id="updateBookTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="updateBookAuthor">Author:</label>
+                    <input type="text" class="form-control" id="updateBookAuthor" required>
+                </div>
+                <div class="form-group">
+                    <label for="updateBookStatus">Status:</label>
+                    <select class="form-control" id="updateBookStatus">
+                        <option value="AVAILABLE">Available</option>
+                        <option value="BORROWED">Borrowed</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Update Book</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Update Book Modal -->
+<div id="updateMemberModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <div class="modal-header" style="display: inline-flex; justify-content: space-between;">
+            <h5>Update Member</h5>
+            <span class="close" id="closeMemberModal">&times;</span>
+        </div>
+        <div class="modal-body">
+            <form id="updateMemberForm">
+                <input type="hidden" id="updateMemberId"> <!-- Hidden field to store book ID -->
+                <div class="form-group">
+                    <label for="updateMemberUsername">User Name:</label>
+                    <input type="text" class="form-control" id="updateMemberUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="updateMemberRole">Role:</label>
+                    <select class="form-control" id="updateMemberRole" disabled >
+                        <option value="LIBRARIAN">Librarian</option>
+                        <option value="MEMBER">Member</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Member</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Add more sections for managing members if needed -->
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

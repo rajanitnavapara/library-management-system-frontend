@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Dashboard</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-between">
+            <div class="">
+                <h2>Member Dashboard</h2>
+            </div>
+            <div class="">
+                <button id="logout" class="btn btn-danger">Logout</button>
+            </div>
+        </div>
+
+
+
+        <h3>Available Books</h3>
+        <table class="table table-striped" id="memberBooksTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        
+        
+        <h3>Books Borrowed By Me</h3>
+        <table class="table table-striped" id="memberBooksBorrowedTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Add a section for borrowed books if needed -->
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>
